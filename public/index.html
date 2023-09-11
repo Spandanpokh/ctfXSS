@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="file"] {
+            display: block;
+            margin: 10px auto;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #uploadedImage {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* "Need help?" section styles */
+        #help {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #help a {
+            text-decoration: none;
+            color: #007BFF;
+            margin: 0 10px;
+        }
+
+        #help a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>CTF Challenge (XSS)</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="profilePic">Profile Picture:</label>
+        <input type="file" id="profilePic" name="profilePic" accept="image/*" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="uploadedImage"></div>
+    
+    <!-- "Need help?" section -->
+    <div id="help">
+        Need help? Find me here,
+        <a href="https://www.facebook.com/spandanpokh/" target="_blank">Facebook</a>
+        <a href="https://www.linkedin.com/in/spandanpokh/" target="_blank">LinkedIn</a>
+    </div>
+</body>
+</html>
